@@ -12,7 +12,6 @@ __pycache__/
 
 # Env & packaging
 .env
-.env.*
 .venv/
 venv/
 pip-log.txt
@@ -44,3 +43,5 @@ pytest_cache/
 
 # Ignore Hugging Face Spaces logs (if any get created)
 huggingface.log
+
+data/raw
