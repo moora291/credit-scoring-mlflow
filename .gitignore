@@ -45,3 +45,4 @@ pytest_cache/
 huggingface.log
 
 data/raw
+build/
