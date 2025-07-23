@@ -45,7 +45,7 @@ Concevoir une solution complète de machine learning pour :
 - Modèle final : **XGBoost** optimisé.
 - Seuil optimal : `0.1`
 - Coût métier minimum : `712`
-- Enregistrement MLflow : ✅
+- Enregistrement MLflow : Oui
 
 ## Structure du projet
 
