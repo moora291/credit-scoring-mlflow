@@ -44,5 +44,7 @@ pytest_cache/
 # Ignore Hugging Face Spaces logs (if any get created)
 huggingface.log
 
-data/raw
+data/raw/*
+data/output/*
 build/
+mlruns/

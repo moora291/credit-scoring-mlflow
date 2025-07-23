@@ -11,10 +11,6 @@ source .venv/bin/activate
 echo "Installation des dépendances..."
 uv pip install --editable . 
 
-# Lancer l’UI MLflow
-echo "Lancement de MLflow UI sur http://localhost:8889"
-.venv/bin/mlflow ui --host 0.0.0.0 --port 8889 &
-
 echo "Environnement prêt. Lancez vos notebooks depuis VSCode ou Jupyter."
 
 jupyter lab
