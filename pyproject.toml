@@ -1,33 +1,40 @@
 [project]
-name = "projet6-credit-scoring"
+name = "credit-scoring-mlflow"
 version = "0.1.0"
-description = "Scoring crédit - Projet 6 OpenClassrooms"
+description = "Credit scoring workflow with MLflow experiment tracking"
 authors = [
-    {name = "David Worsley-Tonks", email = "david.worsley.tonks@gmail.com"}
+    {name = "David Worsley-Tonks", email = "hello@sparkup.dev"}
 ]
 requires-python = ">=3.10,<3.12"
 dependencies = [
+    # Core data stack
     "pandas",
+    "numpy==1.26.4",
+    "scipy",
     "matplotlib",
     "seaborn",
+    "missingno",
     "jupyterlab",
     "ipykernel",
+    "ipywidgets",
+    # Modeling
     "xgboost",
     "catboost",
-    "shap",
-    "scipy",
-    "ipywidgets",
-    "missingno",
+    "lightgbm",
     "scikit-learn==1.3.2",
     "imbalanced-learn==0.11.0",
-    "numpy==1.26.4",
-    "cython==0.29.36",
+    # Explainability
+    "shap",
+    # MLflow tracking
     "mlflow==3.1.1",
     "sqlalchemy",
+    # Experiment optimization
+    "optuna",
+    # Utilities
+    "cython==0.29.36",
     "gunicorn",
     "pyyaml",
-    "lightgbm",
-    "optuna"
+    "huggingface_hub"
 ]
 
 [build-system]

@@ -44,15 +44,15 @@ pytest_cache/
 # Ignore Hugging Face Spaces logs (if any get created)
 huggingface.log
 
-data/raw/*
 data/output/*
+!data/output/.keep
 build/
 
 # Data
 *.parquet
 *.pkl
-*.csv
 screenshots/
 
 # MLflow
-mlruns/
+mlruns/*
+!mlruns/.keep

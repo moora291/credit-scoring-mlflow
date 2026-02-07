@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo "Initialisation de l’environnement Projet 6 OpenClassrooms..."
+echo "Initializing the credit scoring environment..."
 
-# Créer environnement Python avec uv
-echo "Création de l’environnement Python avec uv..."
+# Create a Python environment with uv
+echo "Creating the Python environment with uv..."
 uv venv
 source .venv/bin/activate
 
-# Installer les dépendances à partir de pyproject.toml
-echo "Installation des dépendances..."
+# Install dependencies from pyproject.toml
+echo "Installing dependencies..."
 uv pip install --editable . 
 
-echo "Environnement prêt. Lancez vos notebooks depuis VSCode ou Jupyter."
+echo "Environment ready. Launch notebooks in VSCode or Jupyter."
 
 jupyter lab

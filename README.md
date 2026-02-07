@@ -1,75 +1,109 @@
-# Projet 6 – Implémentez un modèle de scoring
+# Credit Scoring with MLflow Tracking
 
-Ce projet s'inscrit dans le cadre du parcours **"Data Scientist / AI Engineer"** chez OpenClassrooms. Il vise à construire un modèle de scoring de crédit bancaire optimisé selon un coût métier.
+> A production-oriented credit risk modeling workflow with full MLflow experiment tracking, feature engineering, model selection, and threshold tuning.
 
-## Objectif
+## Project Overview
 
-Concevoir une solution complète de machine learning pour :
-- Prédire la capacité de remboursement d’un client,
-- Minimiser un coût métier asymétrique,
-- Optimiser les hyperparamètres et le seuil de décision,
-- Industrialiser le modèle via MLflow.
+This project builds a machine learning pipeline to predict the probability of default for loan applicants. It focuses on practical model development and experiment management, using MLflow to track parameters, metrics, and model artifacts across multiple experiments.
 
-## Étapes du projet
+## What This Project Is / Is Not
 
-### 1. Préparation des données
-- Nettoyage et sélection des variables pertinentes à partir d’un jeu de données brut.
-- Séparation train/test.
-- Sauvegarde des datasets au format `.parquet`.
+**This project is:**
+- A complete credit-scoring workflow from raw data to trained model
+- An MLflow-tracked experiment suite with reproducible runs
+- A baseline for risk modeling and cost-sensitive decision thresholds
 
-> Voir `notebooks/01_preparation_donnees.ipynb`
+**This project is not:**
+- A production-ready scoring service
+- A real-time inference system
+- A fairness or regulatory compliance audit
 
-### 2. Expérimentations de base
-- Entraînement de modèles simples (Dummy, LogisticRegression).
-- Calcul du coût métier.
-- Suivi des runs avec MLflow.
+## MLflow Emphasis
 
-> Voir `notebooks/02_experimentations_mlflow.ipynb`
+MLflow is used throughout the modeling workflow to:
+- Track experiment parameters and metrics
+- Compare candidate models (baseline and advanced)
+- Store trained artifacts and assessment outputs
+- Make model selection decisions reproducible
 
-### 3. Modélisation algorithmique
-- Entraînement de modèles avancés : RandomForest, XGBoost, CatBoost.
-- Comparaison via validation croisée.
-- Choix d’un modèle de référence.
+The notebooks show how each experiment is logged and compared in MLflow.
 
-> Voir `notebooks/03_modele_algorithmique.ipynb`
-
-### 4. Optimisation du modèle
-- Optimisation des hyperparamètres avec Optuna.
-- Recherche du meilleur seuil de décision entre 0.05 et 0.95.
-- Enregistrement du modèle, du seuil optimal, et du coût minimal avec MLflow.
-
-> Voir `notebooks/04_optimisation_hyperparametres.ipynb`
-
-## Résultats
-
-- Modèle final : **XGBoost** optimisé.
-- Seuil optimal : `0.1`
-- Coût métier minimum : `712`
-- Enregistrement MLflow : Oui
-
-## Structure du projet
+## Repository Structure
 
 ```
-projet6/
-├── data/                    # Données sources et sorties (parquet, csv)
-│   └── output/              # Données prêtes à l’emploi
-├── notebooks/               # Notebooks de chaque étape
-├── models/                  # Modèle entraîné sauvegardé
-├── src/                     # Script d'entraînement principal
-├── mlruns/                  # Dossier de tracking MLflow
-├── train_model.py           # Script principal d’entraînement
-├── pyproject.toml           # Dépendances (gestion avec uv ou poetry)
-└── install.sh               # Script d’installation rapide
+data/                      # Raw and output datasets (CSV tracked with Git LFS)
+models/                    # Model artifacts (downloaded from Hugging Face)
+notebooks/                 # End-to-end workflow notebooks
+src/                       # Training script and utilities
+pyproject.toml             # Dependencies
+install.sh                 # Helper to set up the environment
 ```
 
-## Lancer l'entraînement
+## Folder Notes
+
+- `data/raw/` holds the original CSVs tracked via Git LFS.
+- `data/output/` is for derived datasets created by notebooks or `src/train.py`.
+- `models/` stores the model downloaded from Hugging Face.
+- `mlruns/` is the local MLflow tracking directory (kept with a `.keep` placeholder).
+
+## Data Notes
+
+- The raw CSVs are versioned with Git LFS.
+- Derived datasets are written to `data/output/` and should not be committed.
+
+## Workflow Summary
+
+1. **Data prep** (`01_data_preparation.ipynb`)
+   - Feature selection and cleaning
+   - Train/test split and dataset export
+
+2. **Baseline experiments** (`02_mlflow_experiments.ipynb`)
+   - Baseline models and MLflow logging
+   - Initial metric comparisons
+
+3. **Algorithmic models** (`03_model_comparison.ipynb`)
+   - RandomForest, XGBoost, CatBoost comparisons
+   - Cross-validation and MLflow tracking
+
+4. **Hyperparameter optimization** (`04_hyperparameter_optimization.ipynb`)
+   - Optuna tuning
+   - Threshold optimization for cost-sensitive decisions
+   - Best model tracking in MLflow
+
+## Training Script
+
+A lightweight training script replaces the old `00_*` notebooks:
 
 ```bash
-./install.sh
+python src/train.py
 ```
 
-## Crédits et encadrement
+It builds compact feature datasets and trains a baseline XGBoost model.
 
-**Auteur :** David Worsley-Tonks  
-**Mentor :** Elie Wanko  
-**Structure :** OpenClassrooms — Master AI Engineer - Projet 6
+## Models
+
+The model is hosted publicly on Hugging Face and downloaded on demand.
+
+```bash
+python src/download_model.py
+```
+
+Python usage:
+
+```python
+from huggingface_hub import hf_hub_download
+import joblib
+
+path = hf_hub_download(
+    repo_id="dworsleytonks/credit-scoring-xgb",
+    filename="credit_scoring_xgb.pkl",
+    local_dir="models",
+    local_dir_use_symlinks=False,
+)
+model = joblib.load(path)
+```
+
+
+## License
+
+MIT License
